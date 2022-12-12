@@ -21,13 +21,15 @@ class RegisterController extends Controller
                 'password' => 'required | confirmed:password_confirmation | min:6'
             ]
         );
-
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'is_verified' => false,
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
         ]);
+
+        auth()->login($user);
+        session()->flash('message', 'Registration successful');
+
         return redirect('/teams');
     }
 }

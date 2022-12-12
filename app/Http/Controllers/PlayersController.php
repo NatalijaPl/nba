@@ -11,8 +11,8 @@ class PlayersController extends Controller
     public function show($id)
     {
 
-        $player = Player::find($id);
-        $team = Team::find($player->id);
+        $player = Player::findOrFail($id);
+        $team = Team::findOrFail($player->id);
 
         return view('players.show', compact('team', 'player'));
     }
