@@ -5,22 +5,16 @@
     <div class="form-group">
         <label for="email"> <strong> Email: </strong> </label>
         <input type="email" class="form-control" id="email" name="email"/>
-        <br>
-        <br>
+        <br><br>
     </div>
-
-    @error('email')
-        @include('partials.error')
-    @enderror
 
     <div class="form-group">
         <label for="password"> <strong> Password: </strong> </label>
         <input type="password" class="form-control" id="password" name="password"/>
-        <br>
-        <br>
+        <br><br>
     </div>
 
-    @error('password')
+    @error('message')
         @include('partials.error')
     @enderror
 

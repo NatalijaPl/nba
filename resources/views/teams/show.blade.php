@@ -12,3 +12,16 @@
         @endforeach
     </ol>
   </div>
+<form method="POST" action="/teams/{{ $team->id }}/comment">
+    {{ csrf_field() }}
+    <div class="form-group">
+        <label for="content"> <strong> leave a comment: </strong> </label>
+        <br><br>
+        <textarea type="text" class="form-control" id="content" name="content"></textarea>
+        <br><br>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> <strong> submit comment </strong> </button>
+    </div>
+</form>
+
