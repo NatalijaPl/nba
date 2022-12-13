@@ -32,8 +32,7 @@ class RegisterController extends Controller
         ]);
 
         auth()->login($user);
-        session()->flash('message', 'Registration successful');
 
-        return redirect('/teams');
+        return redirect('/login');
     }
 }

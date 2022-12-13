@@ -15,13 +15,22 @@
 <form method="POST" action="/teams/{{ $team->id }}/comment">
     {{ csrf_field() }}
     <div class="form-group">
-        <label for="content"> <strong> leave a comment: </strong> </label>
+        <label for="content"> <strong> Leave a comment: </strong> </label>
         <br><br>
         <textarea type="text" class="form-control" id="content" name="content"></textarea>
         <br><br>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary"> <strong> submit comment </strong> </button>
+        <button type="submit" class="btn btn-primary"> <strong> Submit comment </strong> </button>
     </div>
 </form>
-
+<h4> <strong> Comments: </strong> </h4>
+    <ul class="unstyled">
+        @foreach ($team->comments as $comment)
+            <li>
+                <p>
+                    {{ $comment->content }} by {{ $comment->user->name }}
+                </p>
+            </li>
+        @endforeach
+    </ul>
