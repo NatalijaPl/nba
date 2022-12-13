@@ -28,6 +28,14 @@ class LoginController extends Controller
         }
         return redirect('/teams');
     }
+    public function verification($id)
+    {
+        $user = User::find($id);
+        $user->is_verified = true;
+        $user->save();
+
+        return view('login.verification', compact('user'));
+    }
     public function destroy()
     {
         auth()->logout();
