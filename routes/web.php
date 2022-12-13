@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\RegisterController;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/teams', [TeamsController::class, 'index']);
 Route::get('/teams/{id}', [TeamsController::class, 'show'])->name('single-team');
+Route::post('/teams/{team_id}/comment', [CommentsController::class, 'store'])->name('team-comments');
 
 Route::get('/players/{id}', [PlayersController::class, 'show'])->name('single-player');
 
