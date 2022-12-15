@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CommentsRecieved;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -32,11 +33,11 @@ class RegisterController extends Controller
             'password' => bcrypt(request('password')),
             'is_verified' => false,
         ]);
-
+        Mail::to($user)->send(new CommentsRecieved($user));
         auth()->login($user);
 
-        // return redirect('/teams');
+        return redirect('/teams');
 
-        return redirect('/login');
+        // return redirect('/login');
     }
 }
