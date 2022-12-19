@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeamsController;
@@ -37,3 +38,6 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LoginController::class, 'destroy']);
 
 Route::get('/verification/{id}', [LoginController::class, 'verification']);
+
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('single-news');

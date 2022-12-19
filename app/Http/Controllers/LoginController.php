@@ -40,6 +40,6 @@ class LoginController extends Controller
     {
         auth()->logout();
 
-        return redirect('/teams');
+        return redirect('/login');
     }
 }

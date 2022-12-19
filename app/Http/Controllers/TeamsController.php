@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -22,5 +23,11 @@ class TeamsController extends Controller
     {
         $team = Team::with('players', 'comments.user')->find($id);
         return view('teams.show', compact('team'));
+    }
+
+    public function create()
+    {
+        $news = News::all();
+        return view('teams.create', compact('news'));
     }
 }
