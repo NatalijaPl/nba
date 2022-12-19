@@ -31,13 +31,13 @@ class RegisterController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
-            'is_verified' => false,
         ]);
         Mail::to($user)->send(new CommentsRecieved($user));
+
         auth()->login($user);
 
-        return redirect('/teams');
+        // return redirect('/teams');
 
-        // return redirect('/login');
+        return redirect('/login');
     }
 }
