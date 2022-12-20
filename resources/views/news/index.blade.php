@@ -1,13 +1,11 @@
-<h1>NEWS:</h1>
-<br>
-<br>
+<h3>Vesti</h3>
 @foreach ($news as $new)
     <dt><a href="{{route('single-news', ['id' => $new->id ])}}">{{$new->title}}</a></dt>
     <dd>
-        {{$new->content}}
-        <br>
+        user:
         {{$new->user->name}}
         <br>
+        user_id:
         {{$new->user->id}}
     </dd>
     @endforeach

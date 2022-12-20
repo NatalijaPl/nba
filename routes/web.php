@@ -32,12 +32,12 @@ Route::get('/players/{id}', [PlayersController::class, 'show'])->name('single-pl
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'create']);
+Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/logout', [LoginController::class, 'destroy']);
 
 Route::get('/verification/{id}', [LoginController::class, 'verification']);
 
-Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('single-news');
