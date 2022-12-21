@@ -41,3 +41,4 @@ Route::get('/verification/{id}', [LoginController::class, 'verification']);
 
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('single-news');
+Route::get('/news/team/{id}', [NewsController::class, 'filter'])->name('filter-team');

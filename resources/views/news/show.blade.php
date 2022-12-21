@@ -6,4 +6,11 @@
 
 <p>User id: {{$news->user->id}}</p>
 
+<h3>Teams:</h3>
+<ul>
+    @foreach ($news->teams as $team)
+        <li>{{$team->name}}</li>
+    @endforeach
+</ul>
+
 <a href="/news">Vrati se na stranicu vesti</a>

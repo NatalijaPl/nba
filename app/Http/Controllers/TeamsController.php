@@ -24,10 +24,4 @@ class TeamsController extends Controller
         $team = Team::with('players', 'comments.user')->find($id);
         return view('teams.show', compact('team'));
     }
-
-    public function create()
-    {
-        $news = News::all();
-        return view('teams.create', compact('news'));
-    }
 }
